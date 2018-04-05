@@ -1,56 +1,50 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int pedirEntero(char[], int, int);
 
-/*Declaracion de la funcion o llamada prototipo de la funcion
-
-tipo_de_dato_devuelto identificador (parametros de entrada)
-
-//tipo_de_dato_devuelto (Podemos tener...)
-
-(int, float, char, void)
-
-//identificador
-
-nombre de funcion son identificados por lo menos con un verbo. nombre representativo: verbo+objeto
-
-//parametros de entrada
-
-declaro una variable por cada parametro que va a recibir la funcion(mismas regla de declaracion, tipo de dato y nombre)
-*/
-//si NO pongo void la funcion podria llegar a pasar un entero
-//las funciones generalemente se llaman desde el main pero se puede llamar de otras funciones.
-/*****************************************/
-
-int mostrarEincrementar(int);
+int validarEntero(int, int, int, char[]);
 
 int main()
 {
-    int numero;
-    int incremento;
+    int edad;    //18-60
+    int legajo;    //1-1000
+    int nota;       //1-10
 
-    printf("Ingrese un numero: ");
-    scanf("%d", &numero);
+    edad = pedirEntero("Ingrese edad: ", 18, 60); //funciona como el prompt y se guarda
 
-    //lamada a la funcion mando un valor
-    incremento = mostrarEincrementar(numero);
+    legajo = pedirEntero("Ingrese legajo: ", 1, 1000);
 
-    printf("\nEl numero incrementado es : %d", incremento);
+    nota = pedirEntero("Ingrese nota: ",1, 10);
+
+    printf("La edad es: %d, el legajo es %d, y la nota es %d", edad, legajo, nota);
+
 
     return 0;
 }
-// Segunda instancia, implementacion o desarrollo de la funcion
-// implementacion recibo un valor
-
-
- int mostrarEincrementar(int numero)
+int pedirEntero(char mensaje[], int min, int max)
 {
-    int retorno;
+    int numero;
 
-    printf("El numero ingresado es: %d", numero);
+    printf("%s", mensaje);    //para un conjunto de caracteres y oraciones no pongo %c pongo %s//
+    scanf("%d", &numero);
 
-    retorno = numero+10;
+    numero = validarEntero(numero, min, max, mensaje);
+while(numero<min || numero>max)
+    {
+        printf("Error: %s", mensaje);
+        scanf("%d", &numero);
+    }
 
-    return retorno;
+    return numero;
+}
+int validarEntero(int dato, int min, int max, char mensaje[])
+{
+    while(dato<min || dato>max)
+    {
+        printf("Error: Reingrese %s", mensaje);
+        scanf("%d", &dato);
+    }
 
+    return dato;
 }
