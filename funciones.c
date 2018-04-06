@@ -1,5 +1,6 @@
 #include "Funciones.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 int pedirEntero(char mensaje[], int min, int max)
 {
