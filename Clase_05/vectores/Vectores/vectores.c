@@ -26,7 +26,7 @@ void mostrarVector(int vec[], int tamanio)
 
 }
 
-int cargarVector(int vec[], int tam)
+void cargarVector(int vec[], int tam)
 {
     int i;
     for(i=0; i<TAM; i++)
@@ -34,4 +34,22 @@ int cargarVector(int vec[], int tam)
         printf("Ingrese un numero: ");
         scanf("%d", &vec[i]);
     }
+}
+
+int buscarValor(int vec[], int tam, int valor)
+{
+    int index= -1;
+    int i;
+
+    for(i=0; i<tam; i++)
+    {
+       if(valor== vec[i])
+       {
+           index =i;
+           break;
+       }
+
+    }
+
+    return index;
 }
