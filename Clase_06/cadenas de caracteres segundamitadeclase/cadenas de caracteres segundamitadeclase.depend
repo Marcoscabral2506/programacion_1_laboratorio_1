@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1523631904 source:d:\clase5\arrays\clase_06\cadenas de caracteres segundamitadeclase\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
