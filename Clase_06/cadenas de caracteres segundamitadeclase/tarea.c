@@ -1,11 +1,27 @@
-declarar 3 var, char nombre [?]
-char apellido [?]
-char apellidoyNombre[?];
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    char nombre[15];
+    char apellido[15];
+    char apellidoyNombre[31];
+
+    printf("Ingrese nombre: ");
+    fflush(stdin);
+    gets(nombre);
+
+    printf("Ingrese apellido: ");
+    fflush(stdin);
+    gets(apellido);
+
+    strcpy(apellidoyNombre, apellido);
 
 
-***************************
-ingresar apellido    scarafilo
-ingresar nombre     german
 
-apellidoyNombre= "Scarafilo, German"
-todo sobre la var apellidoynombre
+    printf("%s %s", apellidoyNombre, nombre);
+
+    return 0;
+
+}
