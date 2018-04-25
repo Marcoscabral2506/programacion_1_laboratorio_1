@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1524683913 source:c:\users\marcos\desktop\a\clase_09\tarea\tarea\main.c
+	<stdio.h>
+	<stdlib.h>
+
